@@ -1,17 +1,13 @@
-import React from 'react'
-
-import Searchbar from './components/searchbar.jsx'
-import Tabs from './components/Tabs.jsx'
+import { useState } from 'react'
 import Navbar from './components/Navbar.jsx'
-import ResultsGrid from './components/ResultsGrid.jsx'
+import NavRoutes from './routes/NavRoutes.jsx'
 
 const App = () => {
+  
   return (
     <div>
       <Navbar />
-     <Searchbar />
-     <Tabs />
-     <ResultsGrid />
+      <NavRoutes />
     </div>
   )
 }

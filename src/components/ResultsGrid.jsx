@@ -7,7 +7,9 @@ import {
   setError,
   setResults,
 } from "../redux/features/searchSlice";
+import { setCollectionData } from "../redux/features/collection";
 import { useEffect } from "react";
+import Resultscards from "./Resultscards";
 
 const ResultsGrid = () => {
   const dispatch = useDispatch();
@@ -16,7 +18,6 @@ const ResultsGrid = () => {
     (store) => store.search,
   );
 
-  console.log(resultData);
 
   useEffect(() => {
     const getData = async () => {
@@ -80,15 +81,8 @@ const ResultsGrid = () => {
         {!loading ? (
           resultData.map((items) => {
             return (
-              <div key={items.id} className="flex w-80 object-cover bg-white/30 overflow-hidden rounded-xl relative">
-                <a href={items.src} target="_blank" className="flex flex-col items-center w-full h-50 overflow-hidden relative">
-                    {items.type !== "Videos"? <img src={items.thumbnail} alt={items.title} className="w-full h-full object-cover object-center hover:scale-110 transition duration-300" />: <video src={items.thumbnail} alt={items.title} className="w-full h-full object-cover object-center hover:scale-110 transition duration-300" autoPlay loop muted/>}
-
-                    <div className="absolute z-10 bottom-0 px-2">
-                        <p className="text-white text-sm font-bold capitalize bg-black/30 p-1 rounded-md shadow-md">{items.title}</p>
-                    </div>
-                
-                </a>
+              <div key={items.id}>
+              <Resultscards data = {{items}}/>
               </div>
             );
           })

@@ -3,7 +3,7 @@ import { fetchPhotos } from '../api/mediaApi'
 import { fetchVideos } from '../api/mediaApi'
 import { fetchGifs } from '../api/mediaApi'
 import { useDispatch, useSelector } from 'react-redux'
-import { setQuery } from '../redux/features/searchSlice'
+import { setQuery, clearResults } from '../redux/features/searchSlice'
 
 const Searchbar = () => {
 const [userInp, setuserInp] = useState("")
@@ -11,6 +11,9 @@ const dispatch = useDispatch()
 const submitHandler =(elem) => {
     elem.preventDefault()
     dispatch(setQuery(userInp));
+    if(userInp === "") {
+        dispatch(clearResults())
+    }
     setuserInp("")
 }
   return (
