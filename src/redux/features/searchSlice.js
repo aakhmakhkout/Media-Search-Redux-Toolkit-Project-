@@ -7,7 +7,8 @@ const searchSlice = createSlice({
         activetab: "Photos",
         results:[],
         loading:false,
-        error:null
+        error:null,
+        page:"homepage"
     },
     reducers:{
         setQuery(state, action) {

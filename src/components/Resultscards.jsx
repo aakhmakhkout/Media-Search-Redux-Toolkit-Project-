@@ -5,10 +5,10 @@ import {
   setError,
   setResults,
 } from "../redux/features/searchSlice";
-import { setCollectionData } from "../redux/features/collection";
+import { setCollectionData, removeCollection } from "../redux/features/collection";
 import {Bookmark} from "lucide-react"
 
-const Resultscards = ({data, icon}) => {
+const Resultscards = ({data, icon, whichPage}) => {
 const {items} = data
   const dispatch = useDispatch()
   return (
@@ -21,7 +21,14 @@ const {items} = data
                     </div>
                 </a>
                   <button className="absolute cursor-pointer right-2 top-2 bg-black/20 rounded-md text-[orange] active:scale-95" onClick={(elem)=> {
-                    dispatch(setCollectionData(items))
+                    if(whichPage === "homepage") {
+                      dispatch(setCollectionData(items))
+                      console.log("added")
+                    }
+                    else if(whichPage === "collectionPage") {
+                      dispatch(removeCollection(items))
+                      console.log("removed")
+                    }
                   }}>{icon.icon}</button>
               </div>   
   )

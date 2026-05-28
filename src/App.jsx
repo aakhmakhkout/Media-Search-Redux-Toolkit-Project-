@@ -3,7 +3,7 @@ import Navbar from './components/Navbar.jsx'
 import NavRoutes from './routes/NavRoutes.jsx'
 
 const App = () => {
-  
+  console.log(localStorage.getItem("collectionItems"))
   return (
     <div>
       <Navbar />
