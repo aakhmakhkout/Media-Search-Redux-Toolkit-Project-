@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 export const collectionsSlice = createSlice({
     name:"collection",
     initialState: {
@@ -7,7 +8,14 @@ export const collectionsSlice = createSlice({
     },
     reducers: {
         setCollectionData(state, action) {
-            state.collectionData = [...state.collectionData, action.payload]
+            if(state.collectionData.find((items)=>{
+                return items.id === action.payload.id
+            })) {
+                return
+            }
+            else {
+                state.collectionData = [...state.collectionData, action.payload]
+            }
         }
     }
 })

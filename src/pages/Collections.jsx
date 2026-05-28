@@ -1,11 +1,14 @@
-import React from 'react'
 import Tabs from '../components/Tabs'
 import { useSelector } from 'react-redux'
 import Resultscards from '../components/Resultscards'
+import { Delete } from 'lucide-react'
 
 const Collections = () => {
   const collectionData = useSelector(state => state.collection.collectionData)
   const activeTab = useSelector(state => state.search.activetab)
+  const iconobj ={
+    icon: <Delete size={25} strokeWidth={1.75} />
+  }
   
   
   return (
@@ -17,7 +20,9 @@ const Collections = () => {
           {collectionData.filter((items) => {
           return items.type === activeTab
         }).map((items)=> {
-          return <Resultscards data = {{items}}/>
+          return <div key={items.id}>
+            <Resultscards data = {{items}} icon={iconobj}/>
+            </div>
         })}
       </div>
     </div>

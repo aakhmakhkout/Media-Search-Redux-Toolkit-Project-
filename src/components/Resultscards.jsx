@@ -8,7 +8,7 @@ import {
 import { setCollectionData } from "../redux/features/collection";
 import {Bookmark} from "lucide-react"
 
-const Resultscards = ({data}) => {
+const Resultscards = ({data, icon}) => {
 const {items} = data
   const dispatch = useDispatch()
   return (
@@ -22,7 +22,7 @@ const {items} = data
                 </a>
                   <button className="absolute cursor-pointer right-2 top-2 bg-black/20 rounded-md text-[orange] active:scale-95" onClick={(elem)=> {
                     dispatch(setCollectionData(items))
-                  }}><Bookmark size={25} strokeWidth={2} /></button>
+                  }}>{icon.icon}</button>
               </div>   
   )
 }

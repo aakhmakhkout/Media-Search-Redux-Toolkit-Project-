@@ -17,7 +17,9 @@ const ResultsGrid = () => {
   const { query, activetab, results, loading, error } = useSelector(
     (store) => store.search,
   );
-
+  const iconobj = {
+    icon: <Bookmark size={25} strokeWidth={2} />
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -82,7 +84,7 @@ const ResultsGrid = () => {
           resultData.map((items) => {
             return (
               <div key={items.id}>
-              <Resultscards data = {{items}}/>
+              <Resultscards data = {{items}} icon ={iconobj}/>
               </div>
             );
           })
