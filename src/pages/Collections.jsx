@@ -17,7 +17,7 @@ const Collections = () => {
       <Tabs />
       
     <div className="w-full h-[70vh] flex justify-center flex-col items-center ">
-      <div className="w-[80%] h-full flex flex-wrap gap-5 overflow-y-scroll resultdiv justify-start items-center pb-10">
+      <div className="w-[80%] h-full flex flex-wrap gap-5 overflow-y-scroll resultdiv justify-start  pb-10 mt-5">
           {collectionData.filter((items) => {
           return items.type === activeTab
         }).map((items)=> {
