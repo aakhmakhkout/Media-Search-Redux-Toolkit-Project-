@@ -130,7 +130,6 @@ VITE_PEXELS_KEY=your_pexels_api_key
 
 # 📸 Screenshots
 
-```md
 ![Home Page](./screenshots/mshomepage.png)
 ![Collection Page](./screenshots/mscollectionpage.png)
 ![Home and API fetching](./screenshots/mshomeandapifetching.png)
@@ -138,7 +137,7 @@ VITE_PEXELS_KEY=your_pexels_api_key
 ![tabsandsearchlogic](./screenshots/tabsandsearchlogic.png)
 ![resultgridandcollectionpage](./screenshots/resultgridandcollectionpage.png)
 ![resultcards](./screenshots/resultcards.png)
-```
+
 
 ---
 
