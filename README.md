@@ -130,8 +130,6 @@ VITE_PEXELS_KEY=your_pexels_api_key
 
 # 📸 Screenshots
 
-Add screenshots of your application here.
-
 ```md
 ![Home Page](./screenshots/mshomepage.png)
 ![Collection Page](./screenshots/mscollectionpage.png)
